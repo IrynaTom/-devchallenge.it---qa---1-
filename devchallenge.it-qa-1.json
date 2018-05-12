@@ -1,0 +1,899 @@
+{
+	"id": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+	"name": "devchallenge.it - qa - 1",
+	"description": "",
+	"order": [
+		"2c436b2e-5dc5-3d67-3337-56903387feba",
+		"c2c28733-d5a6-dbcc-2308-6bf73c7aed97",
+		"3801bfd1-d6e7-3efa-15e3-114f20c8edad",
+		"cfda2457-9efa-f50d-7df2-4503c617c53a",
+		"72763e36-3e2c-f3c0-e155-95eab542ed63",
+		"ed207952-a49a-e19c-3b70-0ee21f28db63",
+		"b1fee237-4e8e-5dd6-df45-ac1fd9e695e0",
+		"bea17d1d-54e9-5c01-7959-c915371966b7",
+		"678a4783-2ef6-c7d4-81cd-3b00000e2ac9",
+		"f37dafca-7075-fd12-8259-30f600ad44b7",
+		"a38b637c-26b2-4db5-c6b7-ce297035bf44",
+		"5f74532d-e603-417e-705e-7a71e8c5c8ac",
+		"643575e4-229d-7825-6aed-9f5bcff8a580",
+		"3d7df256-7362-cbbd-5e2c-b0b08a7df20c",
+		"4900653a-bca5-115d-f122-4360f73f666b",
+		"915ae714-7d8b-d962-0d9f-e723fbc8e0e0",
+		"ae2191a5-eb2c-4c6c-8d10-29731ec2a0fb",
+		"7b5187fe-c703-b3b9-0a0f-273b083d3c9d",
+		"4eb85093-1fd3-e7c0-c6f5-04778c389832",
+		"8696af44-ab97-b4e3-5681-a9dc4cea3a75",
+		"634ba176-eb5b-c270-660e-674617cd95ca",
+		"d93f18f5-80f3-87e2-906b-b59da64be939",
+		"b66309eb-21df-ed18-5145-7ee067540922",
+		"56690f8c-ab5f-1863-5656-eb5aa08adca8",
+		"0dc41f3d-a755-cd41-d3d9-1c7e74f3f85f",
+		"8aaadbd6-1719-1524-a45f-9db60ff573c7",
+		"ffc6af3e-63ba-57e1-3258-ea9826bdd2fe",
+		"4ab93dcd-2539-249b-9cdb-dbe9d028ed48"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 0,
+	"owner": "2619432",
+	"public": false,
+	"requests": [
+		{
+			"id": "0dc41f3d-a755-cd41-d3d9-1c7e74f3f85f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/test",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526108082662,
+			"name": "Delete pet with invalid id",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": ""
+		},
+		{
+			"id": "2c436b2e-5dc5-3d67-3337-56903387feba",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status response is OK\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\npostman.setGlobalVariable(\"catId\", jsonData.id);\npostman.setGlobalVariable(\"catName\", jsonData.name);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526069032426,
+			"name": "Add a new valid pet",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"cats\"\r\n  },\r\n  \"name\": \"barsik\",\r\n  \"photoUrls\": [\r\n    \"http://www.catster.com/wp-content/uploads/2017/08/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"pending\"\r\n}"
+		},
+		{
+			"id": "3801bfd1-d6e7-3efa-15e3-114f20c8edad",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 405;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526069131656,
+			"name": "Add a new pet without photoUrl",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 3,\r\n  \"category\": {\r\n    \"id\": 3,\r\n    \"name\": \"dogs\"\r\n  },\r\n  \"name\": \"Sharik\",\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "3d7df256-7362-cbbd-5e2c-b0b08a7df20c",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\npostman.setGlobalVariable(\"catName\", jsonData.name);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526069628224,
+			"name": "Update pet data with unexisted id",
+			"description": "Update cat Name ",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"isFromCollection": true,
+			"collectionRequestId": "a38b637c-26b2-4db5-c6b7-ce297035bf44",
+			"rawModeData": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"cats\"\r\n  },\r\n  \"name\": \"barsik_1\",\r\n  \"photoUrls\": [\r\n    \"someurl\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"avaliable\"\r\n}"
+		},
+		{
+			"id": "4900653a-bca5-115d-f122-4360f73f666b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526106503886,
+			"name": "Update pet data with not valid id",
+			"description": "Update cat Name ",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": \"fgg\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"cats\"\r\n  },\r\n  \"name\": \"barsik_1\",\r\n  \"photoUrls\": [\r\n    \"someurl\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"avaliable\"\r\n}"
+		},
+		{
+			"id": "4ab93dcd-2539-249b-9cdb-dbe9d028ed48",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/{{dogId}}",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\nvar expectedDogName = postman.getGlobalVariable(\"dogName\");\ntests[\"Verify dog name\"] = jsonData.name === expectedDogName;\ntests[\"Body matches image name\"] = responseBody.has(\"Cute-Dog-dogs-13286656-500-375.jpg\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526108544198,
+			"name": "Verify updated pet",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Dog\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "4eb85093-1fd3-e7c0-c6f5-04778c389832",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/{{catId}}",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Cat_1",
+					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "sold",
+					"description": ""
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\npostman.setGlobalVariable(\"catName\", \"Cat_1\");\npostman.setGlobalVariable(\"catStatus\", \"sold\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526107660182,
+			"name": "Update pet using form data",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e"
+		},
+		{
+			"id": "56690f8c-ab5f-1863-5656-eb5aa08adca8",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/{{catId}}",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526107943348,
+			"name": "Delete already deleted pet",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Dog\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "5f74532d-e603-417e-705e-7a71e8c5c8ac",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 405\"] = responseCode.code === 405;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526106265780,
+			"name": "Update pet data without name",
+			"description": "Update cat Name ",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"cats\"\r\n  },\r\n  \r\n  \"photoUrls\": [\r\n    \"someurl\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"avaliable\"\r\n}"
+		},
+		{
+			"id": "634ba176-eb5b-c270-660e-674617cd95ca",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/{{catId}}",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Cat_1",
+					"description": ""
+				},
+				{
+					"key": "status",
+					"value": "sold",
+					"description": ""
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\npostman.setGlobalVariable(\"catName\", \"Cat_1\");\npostman.setGlobalVariable(\"catStatus\", \"sold\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526107660182,
+			"name": "Update pet using form data invalid data",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"isFromCollection": true,
+			"collectionRequestId": "4eb85093-1fd3-e7c0-c6f5-04778c389832"
+		},
+		{
+			"id": "643575e4-229d-7825-6aed-9f5bcff8a580",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 405\"] = responseCode.code === 405;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526106249761,
+			"name": "Update pet data without photoUrl",
+			"description": "Update cat Name ",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"cats\"\r\n  },\r\n  \"name\": \"barsik_1\",\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"avaliable\"\r\n}"
+		},
+		{
+			"id": "678a4783-2ef6-c7d4-81cd-3b00000e2ac9",
+			"headers": "",
+			"headerData": [],
+			"url": "http://petstore.swagger.io/v2/pet/-4",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 404\"] = responseCode.code === 404;\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"Check error message\"] = jsonData.message === \"Pet not found\";\ntests[\"Check error type\"] = jsonData.type === \"error\";\ntests[\"Check error code\"] = jsonData.code === 1;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526069454044,
+			"name": "Find pet with invalid id",
+			"description": "Find pet by ID",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"responses": []
+		},
+		{
+			"id": "72763e36-3e2c-f3c0-e155-95eab542ed63",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526070054910,
+			"name": "Add a new pet with invalid id value of category",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 3,\r\n  \"category\": {\r\n    \"id\": \"hhd\",\r\n    \"name\": \"dogs\"\r\n  },\r\n  \"name\": \"Sharik\",\r\n  \"photoUrls\": [\r\n    \"someurl\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "7b5187fe-c703-b3b9-0a0f-273b083d3c9d",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/jkjhkjhkj",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526106710981,
+			"name": "Find pet by not valid id",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Dog\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "8696af44-ab97-b4e3-5681-a9dc4cea3a75",
+			"headers": "",
+			"headerData": [],
+			"url": "http://petstore.swagger.io/v2/pet/{{catId}}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\nvar expectedCatName = postman.getGlobalVariable(\"catName\");\nvar expectedCatStatus = postman.getGlobalVariable(\"catStatus\");\ntests[\"Verify cat name\"] = jsonData.name === expectedCatName;\ntests[\"Verify cat status\"] = jsonData.status === expectedCatStatus;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526107758862,
+			"name": "Find cat by id copy",
+			"description": "Find pet by ID",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"responses": []
+		},
+		{
+			"id": "8aaadbd6-1719-1524-a45f-9db60ff573c7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\npostman.setGlobalVariable(\"dogId\", jsonData.id);\npostman.setGlobalVariable(\"dogName\", jsonData.name);",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"time": 1526108267113,
+			"name": "Add a new pet",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"auth": null,
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"dogId\", jsonData.id);",
+							"postman.setGlobalVariable(\"dogName\", jsonData.name);"
+						]
+					}
+				}
+			],
+			"descriptionFormat": null,
+			"variables": null,
+			"rawModeData": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Dog\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "915ae714-7d8b-d962-0d9f-e723fbc8e0e0",
+			"headers": "",
+			"headerData": [],
+			"url": "http://petstore.swagger.io/v2/pet/{{catId}}",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\nvar expectedCatName = postman.getGlobalVariable(\"catName\");\ntests[\"Verify cat name\"] = jsonData.name === expectedCatName;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526106581305,
+			"name": "Find pet by id after update",
+			"description": "Find pet by ID",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e"
+		},
+		{
+			"id": "a38b637c-26b2-4db5-c6b7-ce297035bf44",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\npostman.setGlobalVariable(\"catName\", jsonData.name);",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526106292345,
+			"name": "Update pet data (name and status)",
+			"description": "Update cat Name ",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 1,\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"cats\"\r\n  },\r\n  \"name\": \"barsik_1\",\r\n  \"photoUrls\": [\r\n    \"someurl\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"avaliable\"\r\n}"
+		},
+		{
+			"id": "ae2191a5-eb2c-4c6c-8d10-29731ec2a0fb",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/9223372036854775000",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 404\"] = responseCode.code === 404;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526106621608,
+			"name": "Find not existed pet",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Dog\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "b1fee237-4e8e-5dd6-df45-ac1fd9e695e0",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526070134718,
+			"name": "Add a new pet with invalid status",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"isFromCollection": true,
+			"collectionRequestId": "ed207952-a49a-e19c-3b70-0ee21f28db63",
+			"rawModeData": "{\r\n  \"id\": 3,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"dogs\"\r\n  },\r\n  \"name\": \"Sharik\",\r\n  \"photoUrls\": [\r\n    \"someurl\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": \"guu\",\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "b66309eb-21df-ed18-5145-7ee067540922",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/{{catId}}",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 404\"] = responseCode.code === 404;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526107937560,
+			"name": "find deleted pet",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Dog\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "bea17d1d-54e9-5c01-7959-c915371966b7",
+			"headers": "",
+			"headerData": [],
+			"url": "http://petstore.swagger.io/v2/pet/{{catId}}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar jsonData = JSON.parse(responseBody);\nvar expectedCatName = postman.getGlobalVariable(\"catName\");\ntests[\"Verify cat name\"] = jsonData.name === expectedCatName;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526069465577,
+			"name": "Find cat by id",
+			"description": "Find pet by ID",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"responses": []
+		},
+		{
+			"id": "c2c28733-d5a6-dbcc-2308-6bf73c7aed97",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 405\"] = responseCode.code === 405;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526069113268,
+			"name": "Add a new pet without name",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 2,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"birds\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"someurl\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"sold\"\r\n}"
+		},
+		{
+			"id": "cfda2457-9efa-f50d-7df2-4503c617c53a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526069932248,
+			"name": "Add a new pet with invalid id value",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 3,\r\n  \"category\": {\r\n    \"id\": \"\",\r\n    \"name\": \"dogs\"\r\n  },\r\n  \"name\": \"Sharik\",\r\n  \"tags\": [\r\n    {\r\n      \"id\": 1,\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "d93f18f5-80f3-87e2-906b-b59da64be939",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/{{catId}}",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526107943348,
+			"name": "Delete pet",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 0,\r\n  \"category\": {\r\n    \"id\": 0,\r\n    \"name\": \"string\"\r\n  },\r\n  \"name\": \"Dog\",\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "ed207952-a49a-e19c-3b70-0ee21f28db63",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526070134718,
+			"name": "Add a new pet with invalid id value of tag",
+			"description": "Add a new Pet",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e",
+			"rawModeData": "{\r\n  \"id\": 3,\r\n  \"category\": {\r\n    \"id\": 2,\r\n    \"name\": \"dogs\"\r\n  },\r\n  \"name\": \"Sharik\",\r\n  \"photoUrls\": [\r\n    \"someurl\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": \"guu\",\r\n      \"name\": \"homeAnimal\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}"
+		},
+		{
+			"id": "f37dafca-7075-fd12-8259-30f600ad44b7",
+			"headers": "",
+			"headerData": [],
+			"url": "http://petstore.swagger.io/v2/pet/findByStatus?status=pending",
+			"folder": null,
+			"queryParams": [
+				{
+					"key": "status",
+					"value": "pending",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526106872996,
+			"name": "Find pet by status",
+			"description": "Find pet by ID",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e"
+		},
+		{
+			"id": "ffc6af3e-63ba-57e1-3258-ea9826bdd2fe",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://petstore.swagger.io/v2/pet/{{dogId}}/uploadImage",
+			"folder": null,
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "additionalMetadata",
+					"value": "dog icon",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "file",
+					"value": "Cute-Dog-dogs-13286656-500-375.jpg",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1526108528484,
+			"name": "Upload Image for pet",
+			"description": "uploadImage",
+			"collectionId": "3edc716a-92c3-bdc1-c4cd-eecf4906a63e"
+		}
+	]
+}
